@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.codetime.elearning.auth.User;
 
 import java.time.LocalDate;
 
@@ -13,7 +14,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Entity
 @Table(name ="enrollemnt")
-public class Enrollement {
+public class Enrollment {
 
     @Id
     @Column(name = "enrollmentId")
@@ -24,8 +25,8 @@ public class Enrollement {
     private LocalDate enrollmentDate;
 
     @OneToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name="userId", nullable = false)
-    private User username;
+    @JoinColumn(name = "userId", nullable = false)
+    private User userName;
 
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "courseId", nullable = false)
@@ -36,6 +37,5 @@ public class Enrollement {
         this.userName = userName;
         this.course = course;
     }
-
 
 }

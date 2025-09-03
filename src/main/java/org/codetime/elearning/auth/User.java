@@ -42,4 +42,12 @@ public class User {
         this.detail = detail;
     }
 
+    public String getPassword() {
+        return this.password;
+    }
+    public String getUsername() {
+        return this.username;
+    }
+
+
 }

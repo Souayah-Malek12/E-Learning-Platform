@@ -18,10 +18,15 @@ public class AuthGroup {
     @Column(name = "USERNAME")
     private String username;
     @Column(name = "AUTH_GROUP")
-    private String authgroup;
+    private String authGroup;
 
-    public AuthGroup(String username, String authgroup) {
+    public AuthGroup(String username, String authGroup) {
         this.username = username;
-        this.authgroup = authgroup;
+        this.authGroup = authGroup;
     }
+
+    public String getAuthGroup() {
+        return authGroup;
+    }
+
 }

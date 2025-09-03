@@ -1,6 +1,12 @@
 package org.codetime.elearning.auth;
 
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.*;
+
 public class UserPrincipal implements UserDetails {
 
     private User user;
@@ -19,7 +25,7 @@ public class UserPrincipal implements UserDetails {
         }
         Set<SimpleGrantedAuthority> grantedAuthorities = new HashSet<>();
         authGroups.forEach(group -> {
-            grantedAuthorities.add(new SimpleGrantedAuthority(group.getAuthgroup()));
+            grantedAuthorities.add(new SimpleGrantedAuthority(group.getAuthGroup()));
         });
         return grantedAuthorities;
     }
